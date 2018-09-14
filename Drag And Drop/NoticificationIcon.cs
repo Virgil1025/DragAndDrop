@@ -10,7 +10,7 @@ namespace Drag_And_Drop
 {
     public partial class App : Application
     {
-
+        
         System.Windows.Forms.NotifyIcon nIcon = new System.Windows.Forms.NotifyIcon();
         public App()
         {
