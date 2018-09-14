@@ -267,9 +267,24 @@ namespace Drag_And_Drop
             //this.Visibility = Visibility.Hidden;
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void Hide_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Do you want to close this application?",
+                                                      "Confirmation",
+                                                      MessageBoxButton.YesNo,
+                                                      MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                this.Close();
+                System.Windows.Forms.Application.Exit();
+                Environment.Exit(1);
+            }
+            
         }
     }
 }

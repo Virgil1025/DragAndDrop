@@ -11,7 +11,8 @@
             <MenuItem Header="_Menu">
                 <MenuItem Header="_Go Search Page" Click="goSearchPage_onClick"></MenuItem>
                 <MenuItem Header="_Setting..." Click="setting_onClick"></MenuItem>
-                <MenuItem Header="_Hide" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="_Hide" Click="Hide_Click"></MenuItem>
+                <MenuItem Header="_Close" Click="Close_Click"></MenuItem>
             </MenuItem>
 
             <Grid Margin="0,0,0,0">

@@ -10,11 +10,12 @@ namespace Drag_And_Drop
 {
     public partial class App : Application
     {
-        
+
         System.Windows.Forms.NotifyIcon nIcon = new System.Windows.Forms.NotifyIcon();
+
         public App()
         {
-            nIcon.Icon = new Icon(@"C:\Users\VIRGILH\Desktop\icon1.ico");
+            nIcon.Icon = Drag_And_Drop.Properties.Resources.icon1;
             nIcon.Visible = true;
             nIcon.ShowBalloonTip(5000, "Title", "Text", System.Windows.Forms.ToolTipIcon.Info);
             nIcon.Click += nIcon_Click;

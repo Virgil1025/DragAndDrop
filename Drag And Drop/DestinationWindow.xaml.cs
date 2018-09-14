@@ -100,19 +100,21 @@ namespace Drag_And_Drop
 
         private void textBox1_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            this.Key2.Content = e.Key.ToString();
-        }
+            if (this.Key2.Content.Equals("<New Key>")) this.Key2.Content = e.Key.ToString();
 
-        private void Key2_LostFocus(object sender, RoutedEventArgs e)
-        {
             if (VKConverter.getUINT(this.Key2.Content.ToString()) == 0x00)
             {
                 System.Windows.MessageBox.Show("This Key can't be used on hot key.");
                 this.Key2.Content = Key2_Value;
-            } else if (this.Key2.Content.Equals("<New Key>"))
-            {
-                this.Key2.Content = Key2_Value;
             }
+
+
+
+        }
+
+        private void Key2_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (this.Key2.Content.Equals("<New Key>")) this.Key2.Content = Key2_Value;
 
         }
 
