@@ -22,7 +22,6 @@ namespace Drag_And_Drop
 
         void nIcon_Click(object sender, EventArgs e)
         {
-            //events comes here
             MainWindow.Visibility = Visibility.Visible;
             MainWindow.WindowState = WindowState.Normal;
             Window mainWindow = Application.Current.MainWindow;
