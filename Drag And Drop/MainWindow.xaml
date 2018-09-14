@@ -5,30 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Drag_And_Drop"
         mc:Ignorable="d"
-        Title="Paperless System Entrance" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" Height="200" Width="400">
-    <Grid Margin="0,0,0,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="20" />
-        </Grid.RowDefinitions>
-        <StackPanel HorizontalAlignment="Left" Height="30" Margin="10,7,0,0" VerticalAlignment="Top" Grid.Row="0"/>
-        <ListBox ItemsSource="{Binding Path=Files}" Name="DropBox" HorizontalAlignment="Left" Height="270" VerticalAlignment="Top" Width="517" AllowDrop="True" Drop="DropBox_Drop" DragOver="DropBox_DragOver" DragLeave="DropBox_DragLeave" Background="#FFE2E2E2" FontSize="10" Grid.RowSpan="3" Margin="0,15,0,0" />
-        <StatusBar Grid.Row="2" Height="22" VerticalAlignment="Bottom">
-            <StatusBar.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto" MinWidth="100"/>
-                        </Grid.ColumnDefinitions>
-                    </Grid>
-                </ItemsPanelTemplate>
-            </StatusBar.ItemsPanel>
+        Title="Paperless System Entrance" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" Height="200" Width="400" Closing="Window_Closing">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Menu">
+                <MenuItem Header="_Go Search Page" Click="goSearchPage_onClick"></MenuItem>
+                <MenuItem Header="_Setting..." Click="setting_onClick"></MenuItem>
+                <MenuItem Header="_Hide" Click="MenuItem_Click"></MenuItem>
+            </MenuItem>
 
-        </StatusBar>
-    </Grid>
+            <Grid Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="16*"/>
+                    <ColumnDefinition Width="361*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="22.632" />
+                    <RowDefinition Height="17.368"/>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="20" />
+                </Grid.RowDefinitions>
+                <StackPanel HorizontalAlignment="Left" Height="30" Margin="2,7,0,0" VerticalAlignment="Top" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"/>
+                <ScrollViewer Grid.RowSpan="3" Margin="0,0,0,0" Grid.ColumnSpan="3">
+                    <ListBox ItemsSource="{Binding Path=Files}" Name="DropBox" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="517" AllowDrop="True" Drop="DropBox_Drop" DragOver="DropBox_DragOver" DragLeave="DropBox_DragLeave" Background="#FFE2E2E2" FontSize="15" Grid.RowSpan="3" Margin="0,0,0,0">
+                    </ListBox>
+                </ScrollViewer>
+                <StatusBar Grid.Row="2" Height="22" VerticalAlignment="Bottom" Grid.RowSpan="2" Grid.ColumnSpan="3">
+                    <StatusBar.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="100"/>
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </ItemsPanelTemplate>
+                    </StatusBar.ItemsPanel>
+                </StatusBar>
+            </Grid>
+        </Menu>
+    </DockPanel>
 </Window>
